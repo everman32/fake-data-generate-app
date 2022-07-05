@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Container, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import dataGenerator from "./data-generator";
-import Table from "./components/table" 
+import Table from "./components/table";
 
 const Styles = styled.div`
   padding: 1rem;
@@ -35,29 +35,27 @@ const Styles = styled.div`
 `;
 
 function App() {
-  const [seed, setSeed]=useState();
+  const [seed, setSeed] = useState();
   const [items, setItems] = useState(dataGenerator(40));
-
 
   const columns = React.useMemo(
     () => [
-
       {
         Header: "UUID",
-        accessor: "uuid"
+        accessor: "uuid",
       },
       {
         Header: "Name",
-        accessor: "name"
+        accessor: "name",
       },
       {
         Header: "Address",
-        accessor: "address"
+        accessor: "address",
       },
       {
         Header: "Phone",
-        accessor: "phone"
-      }
+        accessor: "phone",
+      },
     ],
     []
   );
@@ -76,16 +74,11 @@ function App() {
         className="mt-3"
         placeholder="Enter seed..."
         value={seed}
-        onChange={e => setSeed(e.target.value)}
-      //type="password"
+        onChange={(e) => setSeed(e.target.value)}
+        // type="password"
       />
-      <Button
-      //variant={"outline-success"}
-      //onClick={singInButtonClick}
-      >
-        Set seed
-      </Button>
-      <Styles> 
+      <Button>Set seed</Button>
+      <Styles>
         <Table columns={columns} data={data} update={fetchMoreData} />
       </Styles>
     </Container>
