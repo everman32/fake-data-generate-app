@@ -1,11 +1,26 @@
 {
-  "private": true,
+  "name": "fake-data-generate-app",
+  "version": "1.0.0",
+  "description": "Application for generating fake user data",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/* --ext .js,.jsx",
+    "lint:fix": "npm run lint -- --fix",
+    "prit": "prettier --check src/**/*.{js,jsx}",
+    "prit:fix": "prettier --write src/**/*.{js,jsx}"
   },
+  "keywords": [
+    "fake-data",
+    "infinite-scroll",
+    "reactjs"
+  ],
+  "author": "Victor Borodyn",
+  "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^6.1.2",
     "react": "^16.8.6",
@@ -15,6 +30,17 @@
     "react-scripts": "^5.0.1",
     "react-table": "latest",
     "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.8.4"
   },
   "browserslist": {
     "production": [
@@ -28,22 +54,12 @@
       "last 1 safari version"
     ]
   },
-  "keywords": [
-    "react-table",
-    "react-infinite-scroll-component",
-    "react"
-  ],
-  "name": "fake-data-generator-app",
-  "description": "",
-  "devDependencies": {
-    "eslint": "^8.35.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "2.8.4"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everman32/fake-data-generate-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/everman32/fake-data-generate-app/issues"
+  },
+  "homepage": "https://github.com/everman32/fake-data-generate-app#readme"
 }
