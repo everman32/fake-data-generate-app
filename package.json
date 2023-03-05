@@ -23,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^6.1.2",
+    "prop-types": "^15.8.1",
     "react": "^16.8.6",
     "react-bootstrap": "^2.2.3",
     "react-dom": "^16.8.6",

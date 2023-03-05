@@ -1,8 +1,9 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table";
 import InfiniteScroll from "react-infinite-scroll-component";
+import PropTypes from "prop-types";
 
-export default function Table({ columns, data, update }) {
+function Table({ columns, data, update }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -67,3 +68,23 @@ export default function Table({ columns, data, update }) {
     </InfiniteScroll>
   );
 }
+
+Table.propTypes = {
+  columns: PropTypes.arrayOf(
+    PropTypes.shape({
+      Header: PropTypes.string.isRequired,
+      accessor: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      uuid: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  update: PropTypes.func.isRequired,
+};
+
+export default Table;
