@@ -75,14 +75,8 @@ function App() {
         placeholder="Enter seed..."
         value={seed}
         onChange={(e) => setSeed(e.target.value)}
-        //type="password"
       />
-      <Button
-      //variant={"outline-success"}
-      //onClick={singInButtonClick}
-      >
-        Set seed
-      </Button>
+      <Button>Set seed</Button>
       <Styles>
         <Table columns={columns} data={data} update={fetchMoreData} />
       </Styles>

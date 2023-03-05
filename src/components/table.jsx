@@ -3,8 +3,6 @@ import { useTable, useSortBy } from "react-table";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function Table({ columns, data, update }) {
-  // Use the state and functions returned from useTable to build your UI
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -24,7 +22,6 @@ export default function Table({ columns, data, update }) {
     console.log("sort");
   }, [sortBy]);
 
-  // Render the UI for your table
   return (
     <InfiniteScroll
       dataLength={rows.length}
