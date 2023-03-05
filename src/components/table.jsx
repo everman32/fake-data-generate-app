@@ -26,7 +26,7 @@ export default function Table({ columns, data, update }) {
     <InfiniteScroll
       dataLength={rows.length}
       next={update}
-      hasMore={true}
+      hasMore
       loader={<h4>Loading more 20 items...</h4>}
     >
       <table {...getTableProps()}>
