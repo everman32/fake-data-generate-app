@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import { Container, Form } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
 import dataGenerator from "./data-generator";
 import Table from "./components/table";
 import TableStyle from "./components/table-style";
 
 function App() {
-  const [seed, setSeed] = useState();
   const [items, setItems] = useState(dataGenerator(40));
-
   const columns = React.useMemo(
     () => [
       {
@@ -41,13 +38,6 @@ function App() {
 
   return (
     <Container>
-      <Form.Control
-        className="mt-3"
-        placeholder="Enter seed..."
-        value={seed}
-        onChange={(e) => setSeed(e.target.value)}
-      />
-      <Button>Set seed</Button>
       <TableStyle>
         <Table columns={columns} data={data} update={fetchMoreData} />
       </TableStyle>
