@@ -14,17 +14,8 @@ const getNewPerson = () => {
   };
 };
 
-const generateData = (...length) => {
-  const generateDataLevel = (depth = 0) => {
-    return [...Array(length[depth]).keys()].map(() => {
-      return {
-        ...getNewPerson(),
-        subRows: length[depth + 1] ? generateDataLevel(depth + 1) : undefined,
-      };
-    });
-  };
-
-  return generateDataLevel();
+const generateData = (numItems) => {
+  return Array.from({ length: numItems }, () => ({ ...getNewPerson() }));
 };
 
 export default generateData;
