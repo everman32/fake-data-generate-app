@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import dataGenerator from "./data-generator";
+import generateData from "./data-generator";
 import Table from "./components/table";
 import TableStyle from "./components/table-style";
 
 function App() {
-  const [items, setItems] = useState(dataGenerator(40));
+  const [items, setItems] = useState(generateData(40));
   const columns = React.useMemo(
     () => [
       {
@@ -28,9 +28,9 @@ function App() {
     []
   );
 
-  const fetchMoreData = () => {
+  const getMoreData = () => {
     setTimeout(() => {
-      setItems(items.concat(dataGenerator(20)));
+      setItems(items.concat(generateData(20)));
     }, 1500);
   };
 
@@ -39,7 +39,7 @@ function App() {
   return (
     <Container>
       <TableStyle>
-        <Table columns={columns} data={data} update={fetchMoreData} />
+        <Table columns={columns} data={data} update={getMoreData} />
       </TableStyle>
     </Container>
   );
