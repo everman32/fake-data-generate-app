@@ -2,26 +2,17 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropTypes from "prop-types";
+import SortIndicator from "./sort-indicator";
 
 function Table({ columns, data, update }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-    state: { sortBy },
-  } = useTable(
-    {
-      columns,
-      data,
-    },
-    useSortBy
-  );
-
-  React.useEffect(() => {
-    console.log("sort");
-  }, [sortBy]);
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable(
+      {
+        columns,
+        data,
+      },
+      useSortBy
+    );
 
   return (
     <InfiniteScroll
@@ -37,13 +28,10 @@ function Table({ columns, data, update }) {
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
-                  <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? " 🔽"
-                        : " 🔼"
-                      : ""}
-                  </span>
+                  <SortIndicator
+                    isSorted={column.isSorted}
+                    isSortedDesc={column.isSortedDesc}
+                  />
                 </th>
               ))}
             </tr>
@@ -51,7 +39,7 @@ function Table({ columns, data, update }) {
         </thead>
 
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, i) => {
+          {rows.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
