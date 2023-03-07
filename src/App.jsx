@@ -1,38 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Container, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import dataGenerator from "./data-generator";
 import Table from "./components/table";
-
-const Styles = styled.div`
-  padding: 1rem;
-
-  table {
-    border-spacing: 0;
-    border: 1px solid black;
-
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
-  }
-`;
+import TableStyle from "./components/table-style";
 
 function App() {
   const [seed, setSeed] = useState();
@@ -77,9 +48,9 @@ function App() {
         onChange={(e) => setSeed(e.target.value)}
       />
       <Button>Set seed</Button>
-      <Styles>
+      <TableStyle>
         <Table columns={columns} data={data} update={fetchMoreData} />
-      </Styles>
+      </TableStyle>
     </Container>
   );
 }
