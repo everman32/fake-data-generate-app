@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useTable, useSortBy } from "react-table";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropTypes from "prop-types";
-import SortIndicator from "./sort-indicator";
+import TableHeader from "./table-header";
+import TableCell from "./table-cell";
 
 function Table({ columns, data, update }) {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -14,40 +15,36 @@ function Table({ columns, data, update }) {
       useSortBy
     );
 
+  const handleUpdate = useCallback(() => {
+    update();
+  }, [update]);
+
   return (
     <InfiniteScroll
       dataLength={rows.length}
-      next={update}
+      next={handleUpdate}
       hasMore
-      loader={<h4>Loading more 20 items...</h4>}
+      loader={<h4>Is loading...</h4>}
     >
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
-                  <SortIndicator
-                    isSorted={column.isSorted}
-                    isSortedDesc={column.isSortedDesc}
-                  />
-                </th>
-              ))}
-            </tr>
-          ))}
+          {headerGroups.length > 0 &&
+            headerGroups.map((headerGroup) => (
+              <TableHeader
+                key={headerGroup.getHeaderGroupProps().key}
+                headerGroup={headerGroup}
+              />
+            ))}
         </thead>
 
         <tbody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
+              <tr key={row.id} {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <TableCell key={cell.column.id} cell={cell} />
+                ))}
               </tr>
             );
           })}
