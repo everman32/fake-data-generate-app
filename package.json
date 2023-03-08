@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,6 +43,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^5.0.0",
     "prettier": "2.8.4"
   },
   "browserslist": {
@@ -62,5 +65,5 @@
   "bugs": {
     "url": "https://github.com/everman32/fake-data-generate-app/issues"
   },
-  "homepage": "/"
+  "homepage": "https://everman32.github.io/fake-data-generate-app"
 }
