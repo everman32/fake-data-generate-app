@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fake-data-generate-app/static/css/main.e6c13ad2.css",
+    "main.js": "/fake-data-generate-app/static/js/main.1f99ee1b.js",
+    "index.html": "/fake-data-generate-app/index.html",
+    "main.e6c13ad2.css.map": "/fake-data-generate-app/static/css/main.e6c13ad2.css.map",
+    "main.1f99ee1b.js.map": "/fake-data-generate-app/static/js/main.1f99ee1b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1f99ee1b.js"
+  ]
+}
