@@ -2,7 +2,7 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/everman32/fake-data-generate-app) [![GitHub stars](https://img.shields.io/github/stars/everman32/fake-data-generate-app)](https://github.com/everman32/fake-data-generate-app/stargazers) [![GitHub forks](https://img.shields.io/github/forks/everman32/fake-data-generate-app)](https://github.com/everman32/fake-data-generate-app/network) [![GitHub issues](https://img.shields.io/github/issues/everman32/fake-data-generate-app)](https://github.com/everman32/fake-data-generate-app/issues) [![GitHub license](https://img.shields.io/github/license/everman32/fake-data-generate-app)](https://github.com/everman32/fake-data-generate-app)
 
-![logo](public/logo.png)
+![logo](docs/logo.png)
 
 Application for generating fake user data
 
