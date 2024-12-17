@@ -6,6 +6,7 @@ export default defineConfig(() => {
     build: {
       outDir: "build",
     },
+    base: "/fake-data-generate-app/",
     plugins: [react()],
     server: {
       open: true,

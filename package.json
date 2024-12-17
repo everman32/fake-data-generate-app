@@ -1,6 +1,7 @@
 {
   "name": "fake-data-generate-app",
   "version": "1.0.0",
+  "homepage": "https://everman32.github.io/fake-data-generate-app",
   "description": "Application for generating fake user data",
   "main": "src/index.js",
   "type": "module",
@@ -41,7 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.2.0",
     "prettier": "^3.4.2",
     "vite": "^6.0.3"
   },
@@ -56,13 +57,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/everman32/fake-data-generate-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/everman32/fake-data-generate-app/issues"
-  },
-  "homepage": "https://everman32.github.io/fake-data-generate-app"
+  }
 }
