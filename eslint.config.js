@@ -39,6 +39,13 @@ export default [
   },
   importPlugin.flatConfigs.recommended,
   {
+    settings: {
+      "import/resolver": {
+        node: {
+          extensions: [".js", ".jsx"],
+        },
+      },
+    },
     files: ["**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: "latest",
