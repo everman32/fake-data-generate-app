@@ -51,6 +51,9 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
     },
+    rules: {
+      "import/no-named-as-default": "off",
+    },
   },
   eslintPluginPrettierRecommended,
 ];
