@@ -23,7 +23,7 @@
   "author": "Victor Borodyn",
   "license": "MIT",
   "dependencies": {
-    "@faker-js/faker": "^6.1.2",
+    "@faker-js/faker": "^9.3.0",
     "prop-types": "^15.8.1",
     "react": "^16.8.6",
     "react-bootstrap": "^2.2.3",

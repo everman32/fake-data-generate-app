@@ -2,15 +2,15 @@ import { faker } from "@faker-js/faker";
 
 const getNewPerson = () => {
   return {
-    uuid: faker.datatype.uuid(),
-    name: faker.name.findName(),
+    uuid: faker.string.uuid(),
+    name: faker.person.fullName(),
     address: [
-      faker.address.state(),
-      faker.address.cityName(),
-      faker.address.streetAddress(),
-      faker.address.secondaryAddress(),
+      faker.location.state(),
+      faker.location.city(),
+      faker.location.streetAddress(),
+      faker.location.secondaryAddress(),
     ].join(", "),
-    phone: faker.phone.phoneNumber(),
+    phone: faker.phone.number(),
   };
 };
 
